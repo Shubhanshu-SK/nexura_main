@@ -142,7 +142,11 @@
   }
   
   .popUp{
+    user-select: none;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     top: 20%;
     font-size: 1.4em;
     height: 25rem;
@@ -150,27 +154,46 @@
     display: hidden;
     padding: 2rem;
     opacity: 0;
+    z-index: -2;
     scale: .5;
-    background: #8b3dff;
+    background-image: linear-gradient(#3e065f 60%, #700b97);
     filter: drop-shadow(10px 2px 20px black);
-    color: #8b3dff;
+    color: #3e065f;
     border-radius: 10px;
-    transition: color 1s ease;
+    transition: color 1s ease 150ms;
     transition: opacity 2s ease-in ;
     transition: scale 1s ease ;
     
   }
-  
-  @media (min-width:645px) {
-    
-    .card:hover + .popUp{
-      display: visible;
-      opacity: 1;
-      scale: 1;
-      color: whitesmoke;
-      z-index: 100;
-    }
+  .afterpopUP{
+    display: visible;
+    opacity: 1;
+    scale: 1;
+    color: whitesmoke;
+    z-index: 100;
   }
+  
+  .closeDiv{
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+  .close{
+    text-align: end;
+    cursor: pointer;
+    /* background: red; */
+    font-weight: 600;
+    font-size: 3rem;
+    rotate: 45deg;
+    border-radius: 100% ;
+    width: 50px ;
+    height: 50px ;
+    padding: 0;
+    margin: 0;
+   background: transparent;
+    position: relative;
+  }
+  
   @media (man-width:645px) {
     .card:hover .overlay {
       opacity: 1;
